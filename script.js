@@ -1,5 +1,4 @@
 const width = window.innerWidth;
-console.log(width);
 if(width < 500){
     document.querySelector("#container").style.flexDirection = "column";
 }
@@ -697,21 +696,13 @@ const weightState = [
         key: "24"
     },
 ]
-// console.log("Сучжоу:", suchgou)
-// console.log("Чанша", chanscha)
-// console.log("Ганчжа:", ganchou)
-// console.log("Нанкин:", nankin)
-// console.log("Петрухин:", distance)
-// console.log("тарифы на сборку:", purchaseFromWeight)
 
 document.querySelector("#countryDataList").onchange = (event) => {
     event.preventDefault();
-
 };
 document.querySelector("#validationPlace").onchange = (event) => {
     event.preventDefault();
     let place = document.querySelector("#validationPlace");
-    console.log(place.value)
     let stateList = document.querySelector("#statelist");
     stateList.innerHTML = ''
     if(place.value === "Нанкин") {
