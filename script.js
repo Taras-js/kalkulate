@@ -916,21 +916,33 @@ document.querySelector(".btn").onclick = (event) => {
             }
             text.innerHTML = ""
             result.innerHTML = `<div>
-                    <ul style="color: black">
-                    <h5 style="border-bottom: 3px solid red; display: inline;">Заданные условия</h5>
+                    <ul style="color: black; padding=20px">
+                    <h5 style="border-bottom: 3px solid red; padding=30px; display: inline;">Заданные условия</h5>
+                    <br>
+                    <br>
                     <li>Вес: ${data.weight} кг.</li>
                     <li>Объем: ${data.volume} м3</li>
                     <li>Место консолидации: ${data.place}</li>
                     <li>Кол-во ДТ: ${data.dt}</li>
                     <li>Город забора: ${data.state}</li>
-                    <li>Условия поставки: ${data.conditions}</li>
+                    <li>Условия поставки: ${data.conditions}</li>                  
                     <li>Расстояние до двери по РФ: ${data.remoteness} км.</li>
-                    <h5 style="border-bottom: 3px solid red; display: inline;">Стоимость доставки</h5>
+                    <hr>
+                    <br>
+                    <br>
+                    </ul>
+                    <ul style="color: black; padding=20px">
+                    <h5 style="border-bottom: 3px solid red; padding=30px; display: inline;">Стоимость доставки</h5>
+                    <br>
+                    <br>
                     <li>Цена в рублях(Россия): ${priceRub || 'Нет данных'}</li>
                     <li>Цена в USDT(Россия): ${Math.round(priceUSDT) || 'Нет данных'}</li>
                     <li>Цена в юанях(Россия): ${priceUAN || 'Нет данных'}</li>
                     <li>Цена в USDT(Казахстан): ${Math.round(priceUSDTKasahstan) || 'Нет данных'}</li>
-                    </ul></div>`
+                    </ul>
+                    <hr>
+                    <br>
+                    </div>`
         }
     } else {
         text.innerHTML = `<p style="color: red">* Ошибка все поля обязательны для заполнения</p>`

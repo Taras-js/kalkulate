@@ -1,0 +1,15 @@
+.header_line {
+    font-size: 36px;
+    line-height: 44px;
+    width: max-content;
+    margin-bottom: 40px;
+    position: relative;
+}
+.header_line:after {
+    content: '';
+    position: absolute;
+    width: 64%;
+    border-bottom: 5px solid #F23F34;
+    bottom: -10px;
+    left: 0;
+}
