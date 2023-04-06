@@ -922,7 +922,7 @@ document.querySelector(".btn").onclick = (event) => {
                     <ul style="color: black; font-size: 22px;">
                     <h5 class="header_line" style="font-size: 24px; text-align: left">Стоимость доставки</h5>
                     <br>
-                    <br>
+                    
                     <li>Цена в рублях (Россия): ${priceRub || 'Нет данных'}</li>
                     <hr>
                     <li>Цена в USDT (Россия): ${Math.round(priceUSDT) || 'Нет данных'}</li>
