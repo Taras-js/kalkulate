@@ -1,6 +1,8 @@
 const width = window.innerWidth;
 if(width < 500){
+    console.log(width)
     document.querySelector("#container").style.flexDirection = "column";
+    document.querySelector("#wrap_block").style.flexDirection = "column";
 }
 const kasachstan = [
     {"CHANGCHUN":{"0":112.5,"1":225.0,"2":270.0,"3":360.0,"4":450.0,"5":540.0,"6":630.0,"7":720.0,"8":810.0,"9":900.0,"10":990.0,"11":1080.0,"12":1170.0,"13":1260.0,"14":1350.0,"15":1440.0,"16":1530.0,"17":1620.0,"18":1710.0,"19":1733.3333333333,"20":1820.0,"21":1906.6666666667,"22":1993.3333333333,"23":2080.0,"24":2166.6666666667}},
@@ -916,29 +918,18 @@ document.querySelector(".btn").onclick = (event) => {
             }
             text.innerHTML = ""
             result.innerHTML = `<div>
-                    <ul style="color: black; padding=20px">
-                    <h5 style="border-bottom: 3px solid red; padding=30px; display: inline;">Заданные условия</h5>
+  
+                    <ul style="color: black; font-size: 22px;">
+                    <h5 class="header_line" style="font-size: 24px; text-align: left">Стоимость доставки</h5>
                     <br>
                     <br>
-                    <li>Вес: ${data.weight} кг.</li>
-                    <li>Объем: ${data.volume} м3</li>
-                    <li>Место консолидации: ${data.place}</li>
-                    <li>Кол-во ДТ: ${data.dt}</li>
-                    <li>Город забора: ${data.state}</li>
-                    <li>Условия поставки: ${data.conditions}</li>                  
-                    <li>Расстояние до двери по РФ: ${data.remoteness} км.</li>
+                    <li>Цена в рублях (Россия): ${priceRub || 'Нет данных'}</li>
                     <hr>
-                    <br>
-                    <br>
-                    </ul>
-                    <ul style="color: black; padding=20px">
-                    <h5 style="border-bottom: 3px solid red; padding=30px; display: inline;">Стоимость доставки</h5>
-                    <br>
-                    <br>
-                    <li>Цена в рублях(Россия): ${priceRub || 'Нет данных'}</li>
-                    <li>Цена в USDT(Россия): ${Math.round(priceUSDT) || 'Нет данных'}</li>
-                    <li>Цена в юанях(Россия): ${priceUAN || 'Нет данных'}</li>
-                    <li>Цена в USDT(Казахстан): ${Math.round(priceUSDTKasahstan) || 'Нет данных'}</li>
+                    <li>Цена в USDT (Россия): ${Math.round(priceUSDT) || 'Нет данных'}</li>
+                    <hr>
+                    <li>Цена в юанях (Россия): ${priceUAN || 'Нет данных'}</li>
+                    <hr>
+                    <li>Цена в USDT (Казахстан): ${Math.round(priceUSDTKasahstan) || 'Нет данных'}</li>
                     </ul>
                     <hr>
                     <br>
