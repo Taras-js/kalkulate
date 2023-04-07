@@ -7319,3 +7319,6 @@ document.querySelector(".btn").onclick = (event) => {
         text.innerHTML = `<p style="color: red">* Ошибка все поля обязательны для заполнения</p>`
     }
 }
+
+
+

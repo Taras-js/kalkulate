@@ -156,26 +156,48 @@
 
 
         <div class="col-auto" style="padding-top: 18px; display: flex; align-items: center; justify-content: center">
-            <button  type="button" class="btn btn-danger auto" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+            <button  type="button" class="btn btn-danger auto" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     style="border: 2px solid red; min-width: 300px; font-size: 20px"
                     >Оставить заявку на звонок
             </button>
         </div>
 
-        <!-- Модальное окно -->
-        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog">
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Заголовок модального окна</h5>
+                        <h5 class="modal-title" id="staticBackdropLabel" style="font-size: 28px">Свяжитесь со мной</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
                     </div>
-                    <div class="modal-body">
-                        ...
+                    <div class="modal-body" style="font-size: 16px">
+                        <div class="col-auto" >
+                            <label for="name"
+                                   class="form-label">Имя</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   id="name" placeholder="Введите имя" value="" required>
+                        </div>
+                        <div class="col-auto">
+                            <label for="phone"
+                                   class="form-label">Телефон</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   id="phone" placeholder="79370000000" value="" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email"
+                                   class="form-label">Почта</label>
+                            <input type="text" class="form-control form-control-lg"
+                                   id="email" placeholder="company@yandex.ru" value="" required>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                        <button type="button" class="btn btn-primary">Понял</button>
+                        <!--                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>-->
+                        <button  type="button" class="btn btn-danger auto" data-bs-dismiss="modal" data-bs-target="#staticBackdrop"
+                                 style="border: 2px solid red; width: 100%; font-size: 20px"
+                        >Оставить заявку
+                        </button>
+
                     </div>
                 </div>
             </div>
