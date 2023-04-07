@@ -14,38 +14,39 @@
 <div class="container-sm col" id="container"
      style="display: flex; justify-content: space-around; padding: 20px; width: 100%">
     <form class="col g-5" style="max-width: 700px">
-        <div style="display: flex; justify-content: center; padding: 20px">
+        <div style="display: flex; justify-content: center; padding: 15px 20px 40px 20px">
             <h2 class="header_line">Калькулятор</h2>
         </div>
-        <div id="wrap_block" style="display: flex; justify-content: space-between;">
+        <div id="wrap_block" style="display: flex; justify-content: space-between; padding-bottom: 20px">
             <div class="one__block" style="width: 330px">
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="countryDataList" class="form-label" style="border-bottom: 1px solid red; display: inline;">Страна
                         доставки</label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc" list="country"
+                    <input class="form-control" style="margin-top: 5px; background-color: #EFEFEF" list="country"
                            id="countryDataList" placeholder="Страна доставки" required>
                     <datalist id="country">
-                        <option value="Россия">
+                        <option value="Россия" >
                         <option value="Казахстан">
                     </datalist>
+                    <select class="form-select" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                        <option selected>Open this select menu</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
                 </div>
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="validationPlace" class="form-label" style="border-bottom: 1px solid red; display: inline;">Место
                         консолидации</label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc;" list="datalistPlace"
-                           id="validationPlace" placeholder="Место консолидации" required>
-                    <datalist id="datalistPlace">
-                        <option value="Нанкин">
-                        <option value="Ганчжоу">
-                        <option value="Чанша">
-                        <option value="Сучжоу">
-                        <option value="Иу">
+                    <input class="form-control" size="10" style="margin-top: 5px; background-color: #EFEFEF;" list="datalistPlace"
+                           id="validationPlace" placeholder="Сначала выберите страну доставки" required>
+                    <datalist id="datalistPlace" >
                     </datalist>
                 </div>
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="stateDataList" class="form-label" style="border-bottom: 1px solid red; display: inline;">Город
                         забора</label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc" list="statelist"
+                    <input class="form-control" style="margin-top: 5px; background-color: #EFEFEF" list="statelist"
                            id="stateDataList" placeholder="Сначала выберите место консолидации" required>
                     <datalist id="statelist">
                     </datalist>
@@ -53,7 +54,7 @@
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="validationWeight" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
                         кг</label>
-                    <input class="form-control" style="margin-top: 5px; background: #dcdcdc;" id="validationWeight"
+                    <input class="form-control" style="margin-top: 5px; background: #EFEFEF;" id="validationWeight"
                            placeholder="Введите число 0-12750" required>
                 </div>
             </div>
@@ -61,15 +62,15 @@
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="validationVolume" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
                         м<sup>3</sup></label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc;" id="validationVolume"
+                    <input class="form-control" style="margin-top: 5px; background-color: #EFEFEF;" id="validationVolume"
                            placeholder="Введите число 0-25" required>
                 </div>
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="conditionsDataList" class="form-label"
                            style="border-bottom: 1px solid red; display: inline;">Условия
                         поставки</label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc" list="datalist"
-                           id="conditionsDataList" placeholder="Условия поставки" required>
+                    <input class="form-control" style="margin-top: 5px; background-color: #EFEFEF" list="datalist"
+                           id="conditionsDataList" placeholder="Выберите условия поставки" required>
                     <datalist id="datalist">
                         <option value="ExW">
                         <option value="FCA">
@@ -79,14 +80,14 @@
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="validationDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
                         ДТ</label>
-                    <input class="form-control" style="margin-top: 5px; background-color: #dcdcdc;" id="validationDT"
+                    <input class="form-control" style="margin-top: 5px; background-color: #EFEFEF;" id="validationDT"
                            placeholder="Введите целое число" required>
                 </div>
-                <div class="col-auto" style="margin-bottom: 20px">
+                <div class="col-auto" style="margin-bottom: 20px" id="fromRussia">
                     <label for="validationRemoteness" style="border-bottom: 1px solid red; display: inline;"
                            class="form-label">Расстояние
                         до двери по РФ, км</label>
-                    <input type="text" class="form-control" style="margin-top: 5px; background-color: #dcdcdc"
+                    <input type="text" class="form-control" style="margin-top: 5px; background-color: #EFEFEF"
                            id="validationRemoteness" placeholder="Введите целое число" value="" required>
                 </div>
             </div>
@@ -104,21 +105,28 @@
             <h2 class="header_line">Расчет стоимости</h2>
         </div>
         <div id="textAlert" style="margin-top: 10px; font-size: 12px"></div>
-        <div id="textResult" style="margin-top: 10px"></div>
-        <!--        <div style="margin-top: 10px">-->
-        <!--            <p>Вес: кг.</p>-->
-        <!--            <p>Объем: м3</p>-->
-        <!--            <p>Место консолидации: </p>-->
-        <!--            <p>Кол-во ДТ: </p>-->
-        <!--            <p>Город забора: </p>-->
-        <!--            <p>Условия поставки: </p>-->
-        <!--            <p>Расстояние до двери по РФ: км.</p>-->
-        <!--            <h5 style="border-bottom: 3px solid red; display: inline;">Стоимость доставки</h5>-->
-        <!--            <p>Цена в рублях: 1000 рублей</p>-->
-        <!--            <p>Цена в USDT(Россия): </p>-->
-        <!--            <p>Цена в юанях(Россия): </p>-->
-        <!--            <p>Цена в USDT(Казахстан): </p>-->
-        <!--        </div>-->
+        <div id="textResult" style="margin-top: 10px; min-width: 400px">
+
+            <div style="min-width: 400px">
+
+                <ul style="color: black; font-size: 22px;">
+                    <h5 class="header_line" style="font-size: 24px; text-align: center">Стоимость доставки</h5>
+                    <br>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в рублях:</span> <span style="color: red; font-size: 30px;" id="costRUB"></span></li>
+                    <hr>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDT"></span></li>
+                    <hr>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в юанях:</span> <span style="color: red; font-size: 30px;" id="costYAN"></span></li>
+                    <hr>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDTK"></span></li>
+                    <hr>
+                </ul>
+
+                <br>
+            </div>
+        </div>
+
+
         <div class="col-auto" style="padding-top: 20px; display: flex; align-items: center; justify-content: center">
             <button class="btn btn-danger auto"
                     style="border: 2px solid red; min-width: 300px; font-size: 20px"
