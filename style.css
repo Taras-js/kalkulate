@@ -6,7 +6,6 @@ body {
     font-size: 36px;
     line-height: 44px;
     width: max-content;
-    /*margin-bottom: 40px;*/
     position: relative;
 }
 .header_line:after {
