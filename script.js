@@ -6970,49 +6970,84 @@ const weightState = [
         key: "24"
     },
 ]
-let weight = document.querySelector("#validationWeight");
-let volume = document.querySelector("#validationVolume");
-let place = document.querySelector("#validationPlace");
-let DT = document.querySelector("#validationDT");
-let state = document.querySelector("#stateDataList");
-let conditions = document.querySelector("#conditionsDataList");
-let remoteness = document.querySelector("#validationRemoteness");
-let text = document.querySelector("#textAlert");
-let result = document.querySelector("#textResult");
 
-let costRUB = document.querySelector("#costRUB");
-let costUSDT = document.querySelector("#costUSDT");
-let costYAN = document.querySelector("#costYAN");
-let costUSDTK = document.querySelector("#costUSDTK");
 document.querySelector("#countryDataList").onchange = (event) => {
     event.preventDefault();
-    weight.value = ''
-    volume.value = ''
-    place.value = ''
-    DT.value = ''
-    state.value = ''
-    conditions.value = ''
-    remoteness.value = ''
-    text.value = ''
-    costRUB.innerText = ''
-    costUSDT.innerText = ''
-    costUSDTK.innerText = ''
-    costYAN.innerText = ''
-    let country = document.querySelector("#countryDataList");
-    let datalistPlace = document.querySelector("#datalistPlace");
-    let validationPlace = document.querySelector("#validationPlace");
-    validationPlace.placeholder = "Выберите место консолидации..."
-    if (country.value === "Казахстан") {
-        let fromRussia = document.querySelector("#fromRussia");
-        fromRussia.innerHTML = '';
-        datalistPlace.innerHTML = `<option value="Иу">`
+    let result = document.querySelector("#textResult");
+    let weight = document.querySelector("#validationWeight");
+    let volume = document.querySelector("#validationVolume");
+    let place = document.querySelector("#datalistPlace");
+    let DT = document.querySelector("#validationDT");
+    let state = document.querySelector("#statelist");
+    let conditions = document.querySelector("#conditionsDataList");
+    let remoteness = document.querySelector("#validationRemoteness");
+    let text = document.querySelector("#textAlert");
+    let costRUB = document.querySelector("#costRUB");
+    let costUSDT = document.querySelector("#costUSDT");
+    let costYAN = document.querySelector("#costYAN");
+    let costUSDTK = document.querySelector("#costUSDTK");
+
+    if(weight) {
+        weight.value = '';
     }
-    if (country.value === "Россия") {
+    if(volume) {
+        volume.value = '';
+    }
+    if(place) {
+        place.value = '';
+    }
+    if(DT) {
+        DT.value = '';
+    }
+    if(state) {
+        state.value = '';
+    }
+    if(conditions) {
+        conditions.value = '';
+    }
+    if(remoteness) {
+        remoteness.value = '';
+    }
+    if(text) {
+        text.value = '';
+    }
+
+    if(costYAN) {
+        costYAN.innerText = '';
+    }
+    if(costRUB) {
+        costRUB.innerText = '';
+    }
+    if(costUSDT) {
+        costUSDT.innerText = '';
+    }
+    if(costUSDTK) {
+        costUSDTK.innerText = '';
+    }
+
+
+    let datalistPlace = document.querySelector("#datalistPlace");
+
+    let listCostsAll = document.querySelector("#listCostsAll");
+
+    if (event.currentTarget.value === "Казахстан") {
         let fromRussia = document.querySelector("#fromRussia");
-        datalistPlace.innerHTML = `<option value="Нанкин">
-                        <option value="Ганчжоу">
-                        <option value="Чанша">
-                        <option value="Сучжоу">`
+        listCostsAll.innerHTML = ''
+        listCostsAll.innerHTML = `<ul style="color: black; font-size: 22px;">
+                    <br>                    
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDTK">0</span></li>
+                    <hr>
+                </ul>`
+        fromRussia.innerHTML = '';
+        datalistPlace.innerHTML = '';
+        datalistPlace.innerHTML = `<option value="Иу" selected>Иу</option>`
+    }
+    if (event.currentTarget.value === "Россия") {
+        let fromRussia = document.querySelector("#fromRussia");
+        datalistPlace.innerHTML = `<option value="Нанкин" selected>Нанкин</option>
+                        <option value="Ганчжоу">Ганчжоу</option>
+                        <option value="Чанша">Чанша</option>
+                        <option value="Сучжоу">Сучжоу</option>`
         if (fromRussia.innerHTML === '') {
             fromRussia.innerHTML = `<label for="validationRemoteness" style="border-bottom: 1px solid red; display: inline;"
                            class="form-label">Расстояние
@@ -7021,48 +7056,92 @@ document.querySelector("#countryDataList").onchange = (event) => {
                            id="validationRemoteness" placeholder="Введите целое число" value="" required>
 `
         }
+
+        listCostsAll.innerHTML = `<ul style="color: black; font-size: 22px;">
+                    <br>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в рублях:</span> <span style="color: red; font-size: 30px;" id="costRUB">0</span></li>
+                    <hr>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDT">0</span></li>
+                    <hr>
+                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в юанях:</span> <span style="color: red; font-size: 30px;" id="costYAN">0</span></li>
+                    <hr>
+                </ul>`
     }
 };
-document.querySelector("#validationPlace").onchange = (event) => {
+document.querySelector("#datalistPlace").onchange = (event) => {
     event.preventDefault();
-    let place = document.querySelector("#validationPlace");
+    let place = document.querySelector("#datalistPlace");
     let stateList = document.querySelector("#statelist");
     stateList.innerHTML = ''
     if (place.value === "Нанкин") {
-        nankin.forEach(i => {
+        nankin.forEach((i, index) => {
             const keys = Object.keys(i)
-            stateList.insertAdjacentHTML("afterbegin", `<option>${keys}</option>`)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+            }
         })
     }
     if (place.value === "Ганчжоу") {
-        ganchou.forEach(i => {
+        ganchou.forEach((i, index) => {
             const keys = Object.keys(i)
-            stateList.insertAdjacentHTML("afterbegin", `<option>${keys}</option>`)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+            }
+
         })
     }
     if (place.value === "Чанша") {
-        chanscha.forEach(i => {
+        chanscha.forEach((i, index) => {
             const keys = Object.keys(i)
-            stateList.insertAdjacentHTML("afterbegin", `<option>${keys}</option>`)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+            }
+
         })
     }
     if (place.value === "Сучжоу") {
-        suchgou.forEach(i => {
+        suchgou.forEach((i, index) => {
             const keys = Object.keys(i)
-            stateList.insertAdjacentHTML("afterbegin", `<option>${keys}</option>`)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+            }
+
         })
     }
     if (place.value === "Иу") {
-        kasachstan.forEach(i => {
+        kasachstan.forEach((i, index) => {
             const keys = Object.keys(i)
-            stateList.insertAdjacentHTML("afterbegin", `<option>${keys}</option>`)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+            }
+
         })
     }
-    let stateDataList = document.querySelector("#stateDataList");
-    stateDataList.placeholder = "Город забора..."
 };
 document.querySelector(".btn").onclick = (event) => {
     event.preventDefault();
+    let weight = document.querySelector("#validationWeight");
+    let volume = document.querySelector("#validationVolume");
+    let place = document.querySelector("#datalistPlace");
+    let DT = document.querySelector("#validationDT");
+    let state = document.querySelector("#statelist");
+    let conditions = document.querySelector("#conditionsDataList");
+    let remoteness = document.querySelector("#validationRemoteness");
+    let text = document.querySelector("#textAlert");
 
 
 
@@ -7071,7 +7150,8 @@ document.querySelector(".btn").onclick = (event) => {
         const weightValidation = Math.round(Number(weight.value.replace(/[^0-9]/g, "")));
         const volumeValidation = Math.ceil(Number(volume.value));
         const DTValidation = Math.round(Number(DT.value.replace(/[^0-9]/g, "")));
-        const remotenessValidation = Math.round(Number(remoteness.value.replace(/[^0-9]/g, "")));
+        const remotenessValidation = Math.round(Number(remoteness ? remoteness.value.replace(/[^0-9]/g, "") : 0));
+        console.log("remotenessValidation", remotenessValidation)
         if (weightValidation >= 0 && weightValidation < 12751) {
             console.log("Вес:", weightValidation)
         } else {
@@ -7089,18 +7169,11 @@ document.querySelector(".btn").onclick = (event) => {
             text.innerHTML = `<p style="color: red">* Ошибка введите в поле количество DT целое число.</p>`
         }
         if (remotenessValidation && remotenessValidation > 0) {
-            console.log("DT:", DTValidation)
+            console.log("remotenessValidation:", remotenessValidation)
         } else {
             text.innerHTML = `<p style="color: red">* Ошибка введите в поле расстояние до двери целое число.</p>`
         }
 
-
-        console.log("Место консолидации:", place.value);
-        console.log("state:", state.value);
-        if (state.value === "") {
-            let stateDataList = document.querySelector("#stateDataList");
-            stateDataList.placeholder = "Город забора..."
-        }
         console.log("conditions:", conditions.value);
         const data = {
             weight: Math.round(weightValidation),
@@ -7212,7 +7285,7 @@ document.querySelector(".btn").onclick = (event) => {
                 suchgou.forEach(i => {
                     if (data.state === Object.keys(i).toString()) {
                         priceUSDT = i[data.state][key];
-                        console.log("priceUSDT:", priceUSDT, i, key)
+                        console.log("priceUSDTR:", priceUSDT, i, key)
                     }
                 })
             }
@@ -7232,10 +7305,15 @@ document.querySelector(".btn").onclick = (event) => {
                 })
             }
             text.innerHTML = ""
-            costRUB.innerText = `${priceRub || ''}`
-            costUSDT.innerText = `${Math.round(priceUSDT) || ''}`
-            costYAN.innerText = `${priceUAN || ''}`
-            costUSDTK.innerText = ` ${Math.round(priceUSDTKasahstan) || ''}`
+            const rub = document.querySelector("#costRUB")
+                if(rub)rub.innerText = `${priceRub || ''}`;
+                const usdtr = document.querySelector("#costUSDT")
+                if(usdtr)usdtr.innerText = `${Math.round(priceUSDT) || ''}`;
+                const uan = document.querySelector("#costYAN")
+                    if(uan)uan.innerText = `${priceUAN || ''}`;
+                    const usdtk = document.querySelector("#costUSDTK");
+                    if(usdtk)usdtk.innerText = `${Math.round(priceUSDTKasahstan) || ''}`;
+
         }
     } else {
         text.innerHTML = `<p style="color: red">* Ошибка все поля обязательны для заполнения</p>`
