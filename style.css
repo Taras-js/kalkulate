@@ -21,3 +21,26 @@ body {
     color: red;
 }
 
+@media screen and (max-width: 1200px) {
+
+    #wrap_block {
+        gap: 20px;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    #container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+@media screen and (max-width: 650px) {
+
+    #wrap_block {
+        flex-direction: column;
+        align-items: center;
+    }
+    #textAlert {
+        text-align: center;
+    }
+}

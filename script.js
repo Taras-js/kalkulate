@@ -1,9 +1,4 @@
-const width = window.innerWidth;
-if (width < 500) {
-    console.log(width)
-    document.querySelector("#container").style.flexDirection = "column";
-    document.querySelector("#wrap_block").style.flexDirection = "column";
-}
+
 const kasachstan = [
     {
         "CHANGCHUN": {
@@ -93,7 +88,7 @@ const kasachstan = [
         }
     },
     {
-        "CHONGQING& CHENGDU": {
+        "CHONGQING&CHENGDU": {
             "0": 87.5,
             "1": 175.0,
             "2": 210.0,
@@ -586,7 +581,7 @@ const kasachstan = [
         }
     },
     {
-        "Other in HENAN": {
+        "HENAN": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -615,7 +610,7 @@ const kasachstan = [
         }
     },
     {
-        "Others in ANHUI": {
+        "ANHUI": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -644,7 +639,7 @@ const kasachstan = [
         }
     },
     {
-        "Others in FUJIAN": {
+        "FUJIAN": {
             "0": 58.3333333333,
             "1": 116.6666666667,
             "2": 140.0,
@@ -673,7 +668,7 @@ const kasachstan = [
         }
     },
     {
-        "Others in GUANGDONG": {
+        "GUANGDONG": {
             "0": 58.3333333333,
             "1": 116.6666666667,
             "2": 140.0,
@@ -702,7 +697,7 @@ const kasachstan = [
         }
     },
     {
-        "Others in HUBEI": {
+        "HUBEI": {
             "0": 62.5,
             "1": 125.0,
             "2": 150.0,
@@ -731,7 +726,7 @@ const kasachstan = [
         }
     },
     {
-        "Others in SHANDONG": {
+        "SHANDONG": {
             "0": 87.5,
             "1": 175.0,
             "2": 210.0,
@@ -2038,7 +2033,7 @@ const suchgou = [
         }
     },
     {
-        "Other in HENAN": {
+        "HENAN": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -3230,7 +3225,7 @@ const chanscha = [
         }
     },
     {
-        "Other in HENAN": {
+        "HENAN": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -3899,7 +3894,7 @@ const nankin = [
         }
     },
     {
-        "CHONGQING& CHENGDU": {
+        "CHONGQING&CHENGDU": {
             "0": 95.8333333333,
             "1": 191.6666666667,
             "2": 287.5,
@@ -4305,7 +4300,7 @@ const nankin = [
         }
     },
     {
-        "Other in HENAN": {
+        "HENAN": {
             "0": 70.8333333333,
             "1": 141.6666666667,
             "2": 212.5,
@@ -4334,7 +4329,7 @@ const nankin = [
         }
     },
     {
-        "Others in ANHUI": {
+        "ANHUI": {
             "0": 66.6666666667,
             "1": 133.3333333333,
             "2": 200.0,
@@ -4363,7 +4358,7 @@ const nankin = [
         }
     },
     {
-        "Others in FUJIAN": {
+        "FUJIAN": {
             "0": 79.1666666667,
             "1": 158.3333333333,
             "2": 237.5,
@@ -4392,7 +4387,7 @@ const nankin = [
         }
     },
     {
-        "Others in HUBEI": {
+        "HUBEI": {
             "0": 66.6666666667,
             "1": 133.3333333333,
             "2": 200.0,
@@ -4421,7 +4416,7 @@ const nankin = [
         }
     },
     {
-        "Others in SHANDONG": {
+        "SHANDONG": {
             "0": 79.1666666667,
             "1": 158.3333333333,
             "2": 237.5,
@@ -4711,7 +4706,7 @@ const nankin = [
         }
     },
     {
-        "TIANJIN&BEIJING  ": {
+        "TIANJIN&BEIJING": {
             "0": 79.1666666667,
             "1": 158.3333333333,
             "2": 237.5,
@@ -5149,7 +5144,7 @@ const ganchou = [
         }
     },
     {
-        "CHONGQING& CHENGDU": {
+        "CHONGQING&CHENGDU": {
             "0": 87.5,
             "1": 175.0,
             "2": 210.0,
@@ -5642,7 +5637,7 @@ const ganchou = [
         }
     },
     {
-        "Other in HENAN": {
+        "HENAN": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -5671,7 +5666,7 @@ const ganchou = [
         }
     },
     {
-        "Others in ANHUI": {
+        "ANHUI": {
             "0": 83.3333333333,
             "1": 166.6666666667,
             "2": 200.0,
@@ -5700,7 +5695,7 @@ const ganchou = [
         }
     },
     {
-        "Others in FUJIAN": {
+        "FUJIAN": {
             "0": 58.3333333333,
             "1": 116.6666666667,
             "2": 140.0,
@@ -5729,7 +5724,7 @@ const ganchou = [
         }
     },
     {
-        "Others in GUANGDONG": {
+        "GUANGDONG": {
             "0": 58.3333333333,
             "1": 116.6666666667,
             "2": 140.0,
@@ -5758,7 +5753,7 @@ const ganchou = [
         }
     },
     {
-        "Others in HUBEI": {
+        "HUBEI": {
             "0": 62.5,
             "1": 125.0,
             "2": 150.0,
@@ -5787,7 +5782,7 @@ const ganchou = [
         }
     },
     {
-        "Others in SHANDONG": {
+        "SHANDONG": {
             "0": 87.5,
             "1": 175.0,
             "2": 210.0,
@@ -7040,7 +7035,20 @@ document.querySelector("#countryDataList").onchange = (event) => {
                 </ul>`
         fromRussia.innerHTML = '';
         datalistPlace.innerHTML = '';
-        datalistPlace.innerHTML = `<option value="Иу" selected>Иу</option>`
+        datalistPlace.innerHTML = `<option value="Иу">Иу</option>`
+        let stateList = document.querySelector("#statelist");
+        stateList.innerHTML = ''
+        kasachstan.forEach((i, index) => {
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
+
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
+            }
+
+        })
     }
     if (event.currentTarget.value === "Россия") {
         let fromRussia = document.querySelector("#fromRussia");
@@ -7066,6 +7074,17 @@ document.querySelector("#countryDataList").onchange = (event) => {
                     <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в юанях:</span> <span style="color: red; font-size: 30px;" id="costYAN">0</span></li>
                     <hr>
                 </ul>`
+        let stateList = document.querySelector("#statelist");
+        stateList.innerHTML = ''
+        nankin.forEach((i, index) => {
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
+            if(index === 0) {
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
+            } else {
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
+            }
+        })
     }
 };
 document.querySelector("#datalistPlace").onchange = (event) => {
@@ -7075,58 +7094,63 @@ document.querySelector("#datalistPlace").onchange = (event) => {
     stateList.innerHTML = ''
     if (place.value === "Нанкин") {
         nankin.forEach((i, index) => {
-            const keys = Object.keys(i)
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
             if(index === 0) {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
             } else {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
             }
         })
     }
     if (place.value === "Ганчжоу") {
         ganchou.forEach((i, index) => {
-            const keys = Object.keys(i)
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
             if(index === 0) {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
 
             } else {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
             }
 
         })
     }
     if (place.value === "Чанша") {
         chanscha.forEach((i, index) => {
-            const keys = Object.keys(i)
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
             if(index === 0) {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
 
             } else {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
             }
 
         })
     }
     if (place.value === "Сучжоу") {
         suchgou.forEach((i, index) => {
-            const keys = Object.keys(i)
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
             if(index === 0) {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
 
             } else {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
             }
 
         })
     }
     if (place.value === "Иу") {
         kasachstan.forEach((i, index) => {
-            const keys = Object.keys(i)
+            let keys = Object.keys(i).toString()
+            console.log("keys:",keys)
             if(index === 0) {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys} selected>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys} selected>${keys}</option>`)
 
             } else {
-                stateList.insertAdjacentHTML("afterbegin", `<option value={keys}>${keys}</option>`)
+                stateList.insertAdjacentHTML("afterbegin", `<option value=${keys}>${keys}</option>`)
             }
 
         })
@@ -7174,7 +7198,7 @@ document.querySelector(".btn").onclick = (event) => {
             text.innerHTML = `<p style="color: red">* Ошибка введите в поле расстояние до двери целое число.</p>`
         }
 
-        console.log("conditions:", conditions.value);
+        console.log("state.value:", state.value);
         const data = {
             weight: Math.round(weightValidation),
             volume: Math.ceil(volumeValidation),
