@@ -7030,7 +7030,7 @@ document.querySelector("#countryDataList").onchange = (event) => {
         listCostsAll.innerHTML = ''
         listCostsAll.innerHTML = `<ul style="color: black; font-size: 22px;">
                     <br>                    
-                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDTK">0</span></li>
+                    <li ><span>Цена в USDT:</span> <span style="color: red;" id="costUSDTK">0</span></li>
                     <hr>
                 </ul>`
         fromRussia.innerHTML = '';
@@ -7067,11 +7067,11 @@ document.querySelector("#countryDataList").onchange = (event) => {
 
         listCostsAll.innerHTML = `<ul style="color: black; font-size: 22px;">
                     <br>
-                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в рублях:</span> <span style="color: red; font-size: 30px;" id="costRUB">0</span></li>
+                    <li><span>Цена в рублях:</span> <span style="color: red;" id="costRUB">0</span></li>
                     <hr>
-                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в USDT:</span> <span style="color: red; font-size: 30px;" id="costUSDT">0</span></li>
+                    <li><span>Цена в USDT:</span> <span style="color: red;" id="costUSDT">0</span></li>
                     <hr>
-                    <li style="display: flex; justify-content: space-between; width: 100%; height: 33px;"><span>Цена в юанях:</span> <span style="color: red; font-size: 30px;" id="costYAN">0</span></li>
+                    <li><span>Цена в юанях:</span> <span style="color: red;" id="costYAN">0</span></li>
                     <hr>
                 </ul>`
         let stateList = document.querySelector("#statelist");
