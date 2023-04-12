@@ -18,7 +18,7 @@
             line-height: 80px;
             width: max-content;
             position: relative;
-            margin-top: 50px;
+            /*margin-top: 50px;*/
         }
 
 
@@ -110,6 +110,7 @@ https://toughengineer.github.io/demo/slider-styler*/
         input[type=range].styled-slider {
             height: 2.2em;
             -webkit-appearance: none;
+
         }
 
         /*progress support*/
@@ -117,6 +118,7 @@ https://toughengineer.github.io/demo/slider-styler*/
             --range: calc(var(--max) - var(--min));
             --ratio: calc((var(--value) - var(--min)) / var(--range));
             --sx: calc(0.5 * 2em + var(--ratio) * (100% - 2em));
+
         }
 
         input[type=range].styled-slider:focus {
@@ -129,6 +131,7 @@ https://toughengineer.github.io/demo/slider-styler*/
             width: 2em;
             height: 2em;
             border-radius: 1em;
+
             background: red;
             border: none;
             box-shadow: 0 0 2px black;
@@ -136,24 +139,28 @@ https://toughengineer.github.io/demo/slider-styler*/
         }
 
         input[type=range].styled-slider::-webkit-slider-runnable-track {
-            height: 1em;
-            border: 1px solid #b2b2b2;
+            height: 4px;
+            /*border: 0px solid #b2b2b2;*/
             border-radius: 0.5em;
             background: #efefef;
             box-shadow: none;
+
         }
 
         input[type=range].styled-slider::-webkit-slider-thumb:hover {
             background: red;
+
         }
 
-        input[type=range].styled-slider:hover::-webkit-slider-runnable-track {
+        input[type=range].styled-slider::-webkit-slider-runnable-track {
             background: #e5e5e5;
             border-color: #9a9a9a;
+
         }
 
         input[type=range].styled-slider::-webkit-slider-thumb:active {
             background: red;
+
         }
 
         input[type=range].styled-slider:active::-webkit-slider-runnable-track {
@@ -162,20 +169,24 @@ https://toughengineer.github.io/demo/slider-styler*/
         }
 
         input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+            z-index: 100;
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #efefef;
         }
 
         input[type=range].styled-slider.slider-progress:hover::-webkit-slider-runnable-track {
+
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #e5e5e5;
         }
 
         input[type=range].styled-slider.slider-progress:active::-webkit-slider-runnable-track {
+
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #f5f5f5;
         }
 
         /*mozilla*/
         input[type=range].styled-slider::-moz-range-thumb {
-            width: 2em;
+
+            width: 4em;
             height: 2em;
             border-radius: 1em;
             background: red;
@@ -189,40 +200,49 @@ https://toughengineer.github.io/demo/slider-styler*/
             border-radius: 0.5em;
             background: #efefef;
             box-shadow: none;
+
         }
 
         input[type=range].styled-slider::-moz-range-thumb:hover {
             background: red;
+
         }
 
         input[type=range].styled-slider:hover::-moz-range-track {
             background: #e5e5e5;
             border-color: #9a9a9a;
+
         }
 
         input[type=range].styled-slider::-moz-range-thumb:active {
             background: red;
+
         }
 
         input[type=range].styled-slider:active::-moz-range-track {
             background: #f5f5f5;
             border-color: #c1c1c1;
+
         }
 
         input[type=range].styled-slider.slider-progress::-moz-range-track {
+
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #efefef;
         }
 
         input[type=range].styled-slider.slider-progress:hover::-moz-range-track {
+
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #e5e5e5;
         }
 
         input[type=range].styled-slider.slider-progress:active::-moz-range-track {
+
             background: linear-gradient( red, orangered) 0/var(--sx) 100% no-repeat, #f5f5f5;
         }
 
         /*ms*/
         input[type=range].styled-slider::-ms-fill-upper {
+
             background: transparent;
             border-color: transparent;
         }
@@ -230,9 +250,11 @@ https://toughengineer.github.io/demo/slider-styler*/
         input[type=range].styled-slider::-ms-fill-lower {
             background: transparent;
             border-color: transparent;
+
         }
 
         input[type=range].styled-slider::-ms-thumb {
+
             width: 2em;
             height: 2em;
             border-radius: 1em;
@@ -244,6 +266,7 @@ https://toughengineer.github.io/demo/slider-styler*/
         }
 
         input[type=range].styled-slider::-ms-track {
+
             height: 1em;
             border-radius: 0.5em;
             background: #efefef;
@@ -253,40 +276,48 @@ https://toughengineer.github.io/demo/slider-styler*/
         }
 
         input[type=range].styled-slider::-ms-thumb:hover {
+
             background: red;
         }
 
         input[type=range].styled-slider:hover::-ms-track {
             background: #e5e5e5;
             border-color: #9a9a9a;
+
         }
 
         input[type=range].styled-slider::-ms-thumb:active {
+
             background: red;
         }
 
         input[type=range].styled-slider:active::-ms-track {
+
             background: #f5f5f5;
             border-color: #c1c1c1;
         }
 
         input[type=range].styled-slider.slider-progress::-ms-fill-lower {
             height: max(calc(1em - 1px - 1px),0px);
+
             border-radius: 0.5em 0 0 0.5em;
             margin: -1px 0 -1px -1px;
             background: red;
             border: 1px solid #b2b2b2;
             border-right-width: 0;
+
         }
 
         input[type=range].styled-slider.slider-progress:hover::-ms-fill-lower {
             background: red;
             border-color: #9a9a9a;
+
         }
 
         input[type=range].styled-slider.slider-progress:active::-ms-fill-lower {
             background: red;
             border-color: red;
+
         }
 
         @media screen and (min-width: 1100px) {
@@ -404,10 +435,10 @@ https://toughengineer.github.io/demo/slider-styler*/
                     <label for="datalistPlace" class="form-label" style="border-bottom: 1px solid red; display: inline;">Место
                         консолидации</label>
                     <select class="form-select" id="datalistPlace" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
-                        <option value="Нанкин" selected>Нанкин</option>
-                        <option value="Ганчжоу">Ганчжоу</option>
-                        <option value="Чанша">Чанша</option>
-                        <option value="Сучжоу">Сучжоу</option>
+                        <option value="Nanjing" selected>Nanjing</option>
+                        <option value="Guangzhou">Guangzhou</option>
+                        <option value="Changsha">Changsha</option>
+                        <option value="Suzhou">Suzhou</option>
                     </select>
                 </div>
                 <div class="col-auto" style="margin-bottom: 20px">
@@ -536,14 +567,12 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
                     до двери по РФ, км</label>
                 <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="rangeRussia">
-
-                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
-                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
+                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
+                        <div style="display: flex; flex-direction: row; z-index: 2; height: 40px; background-color: #EFEFEF;">
                             <div><span style="color: red; font-size: 24px" id="data_remoteness">0</span></div>
                         </div>
-                        <input type="range" min="0" max="1000" value="0" style="background-color: #EFEFEF;" step="10" class="styled-slider slider-progress" id="customRange3" >
+                        <input type="range" min="0" style="position: absolute; width:100%; bottom: 0; " max="1000" value="0"  step="10" class="styled-slider slider-progress" id="customRange3" >
                     </div>
-
                 </div>
             </div>
         </div>
@@ -553,21 +582,23 @@ https://toughengineer.github.io/demo/slider-styler*/
 <!--            </button>-->
 <!--        </div>-->
     </form>
-    <div>
+    <div >
         <div style="display: flex; justify-content: center; padding: 20px">
             <h2 class="header_line">Расчет стоимости</h2>
         </div>
         <div id="textAlert"></div>
         <div id="textResult" style="margin-top: 10px; min-width: 200px; height: 375px">
             <div style="min-width: 200px" id="listCostsAll">
-<!--                <h5 class="header_line" style="font-size: 24px; text-align: center; margin-left: 30px;">Стоимость доставки</h5>-->
+                <h4 class="header_line" style="font-size: 24px; text-align: center; margin-left: 30px;">Китай Москва</h4>
                 <ul style="color: black; font-size: 22px;">
-                    <br>
-                    <li><span >Цена в рублях:</span><span style="color: red;" id="costRUB">0</span></li>
-                    <hr>
                     <li><span>Цена в USDT:</span> <span style="color: red;" id="costUSDT">0</span></li>
                     <hr>
                     <li><span>Цена в юанях:</span> <span style="color: red;" id="costYAN">0</span></li>
+                    <hr>
+                </ul>
+                <h4 class="header_line" style="font-size: 24px; text-align: center; margin-left: 30px; margin-top: 0;">По России</h4>
+                <ul style="color: black; font-size: 22px;">
+                    <li><span >Цена в рублях:</span><span style="color: red;" id="costRUB">0</span></li>
                     <hr>
                 </ul>
                 <br>
@@ -582,42 +613,43 @@ https://toughengineer.github.io/demo/slider-styler*/
         </div>
 
 
-        <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">Свяжитесь со мной</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Свяжитесь со мной</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body" style="font-size: 16px">
+                    <div class="col-auto" >
+                        <label for="name"
+                               class="form-label" style="margin-bottom: 0;">Имя</label>
+                        <input type="text" class="form-control form-control-lg"
+                               id="name" placeholder="Введите имя" value="" required>
                     </div>
-                    <div class="modal-body" style="font-size: 16px">
-                        <div class="col-auto" >
-                            <label for="name"
-                                   class="form-label" style="margin-bottom: 0;">Имя</label>
-                            <input type="text" class="form-control form-control-lg"
-                                   id="name" placeholder="Введите имя" value="" required>
-                        </div>
-                        <div class="col-auto" style="margin-top: 15px">
-                            <label for="phone"
-                                   class="form-label" style="margin-bottom: 0">Телефон</label>
-                            <input type="text" class="form-control form-control-lg"
-                                   id="phone" placeholder="79370000000" value="" required>
-                        </div>
-                        <div class="col-auto" style="margin-top: 15px">
-                            <label for="email"
-                                   class="form-label" style="margin-bottom: 0">Почта</label>
-                            <input type="text" class="form-control form-control-lg"
-                                   id="email" placeholder="company@yandex.ru" value="" required>
-                        </div>
+                    <div class="col-auto" style="margin-top: 15px">
+                        <label for="phone"
+                               class="form-label" style="margin-bottom: 0">Телефон</label>
+                        <input type="number" class="form-control form-control-lg"
+                               id="phone" placeholder="79370000000" value="" required>
                     </div>
-                    <div class="modal-footer">
-                        <button  type="button"
-                                 class="btn btn-danger auto"
-                                 data-bs-dismiss="modal"
-                                 data-bs-target="#staticBackdrop"
-                        >Оставить заявку
-                        </button>
+                    <div class="col-auto" style="margin-top: 15px">
+                        <label for="email"
+                               class="form-label" style="margin-bottom: 0">Почта</label>
+                        <input type="text" class="form-control form-control-lg"
+                               id="email" placeholder="company@yandex.ru" value="" required>
                     </div>
+                </div>
+                <div class="modal-footer">
+                    <button  type="button"
+                             class="btn btn-danger auto"
+                             data-bs-dismiss="modal"
+                             data-bs-target="#staticBackdrop"
+                    >Оставить заявку
+                    </button>
                 </div>
             </div>
         </div>
@@ -629,3 +661,5 @@ https://toughengineer.github.io/demo/slider-styler*/
 <script src="script.js"></script>
 </body>
 </html>
+
+

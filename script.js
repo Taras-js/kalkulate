@@ -7038,9 +7038,12 @@ document.querySelector("#countryDataList").onchange = (event) => {
                     <li ><span>Цена в USDT:</span> <span style="color: red;" id="costUSDTK">0</span></li>
                     <hr>
                 </ul>`
-        fromRussia.innerHTML = '';
+        if(fromRussia){
+            fromRussia.innerHTML = '';
+        }
+
         datalistPlace.innerHTML = '';
-        datalistPlace.innerHTML = `<option value="Иу">Иу</option>`
+        datalistPlace.innerHTML = `<option value="Yiwu">Yiwu</option>`
         let stateList = document.querySelector("#statelist");
         stateList.innerHTML = ''
         kasachstan.forEach((i, index) => {
@@ -7057,11 +7060,11 @@ document.querySelector("#countryDataList").onchange = (event) => {
     }
     if (event.currentTarget.value === "Россия") {
         let fromRussia = document.querySelector("#fromRussia");
-        datalistPlace.innerHTML = `<option value="Нанкин" selected>Нанкин</option>
-                        <option value="Ганчжоу">Ганчжоу</option>
-                        <option value="Чанша">Чанша</option>
-                        <option value="Сучжоу">Сучжоу</option>`
-        if (fromRussia.innerHTML === '') {
+        datalistPlace.innerHTML = `<option value="Nanjing" selected>Nanjing</option>
+                        <option value="Guangzhou">Guangzhou</option>
+                        <option value="Changsha">Changsha</option>
+                        <option value="Suzhou">Suzhou</option>`
+        if (fromRussia && fromRussia.innerHTML === '') {
             fromRussia.innerHTML = `<label for="validationRemoteness" style="border-bottom: 1px solid red; display: inline;"
                            class="form-label">Расстояние
                         до двери по РФ, км</label>
@@ -7118,7 +7121,7 @@ document.querySelector("#datalistPlace").onchange = (event) => {
     let place = document.querySelector("#datalistPlace");
     let stateList = document.querySelector("#statelist");
     stateList.innerHTML = ''
-    if (place.value === "Нанкин") {
+    if (place.value === "Nanjing") {
         nankin.forEach((i, index) => {
             let keys = Object.keys(i).toString()
             console.log("keys:",keys)
@@ -7129,7 +7132,7 @@ document.querySelector("#datalistPlace").onchange = (event) => {
             }
         })
     }
-    if (place.value === "Ганчжоу") {
+    if (place.value === "Guangzhou") {
         ganchou.forEach((i, index) => {
             let keys = Object.keys(i).toString()
             console.log("keys:",keys)
@@ -7142,7 +7145,7 @@ document.querySelector("#datalistPlace").onchange = (event) => {
 
         })
     }
-    if (place.value === "Чанша") {
+    if (place.value === "Changsha") {
         chanscha.forEach((i, index) => {
             let keys = Object.keys(i).toString()
             console.log("keys:",keys)
@@ -7155,7 +7158,7 @@ document.querySelector("#datalistPlace").onchange = (event) => {
 
         })
     }
-    if (place.value === "Сучжоу") {
+    if (place.value === "Suzhou") {
         suchgou.forEach((i, index) => {
             let keys = Object.keys(i).toString()
             console.log("keys:",keys)
@@ -7168,7 +7171,7 @@ document.querySelector("#datalistPlace").onchange = (event) => {
 
         })
     }
-    if (place.value === "Иу") {
+    if (place.value === "Yiwu") {
         kasachstan.forEach((i, index) => {
             let keys = Object.keys(i).toString()
             console.log("keys:",keys)
@@ -7264,21 +7267,21 @@ document.querySelector(".btn").onclick = (event) => {
 
             purchaseFromWeight.forEach(p => {
                 if (data.weight >= p.weightFrom && data.weight <= p.distanceBefore) {
-                    if (data.place === "Нанкин") {
+                    if (data.place === "Nanjing") {
                         priceUAN = p.purchase.a
                     }
-                    if (data.place === "Ганчжоу") {
+                    if (data.place === "Guangzhou") {
                         priceUAN = p.purchase.b
                     }
-                    if (data.place === "Сучжоу") {
+                    if (data.place === "Suzhou") {
                         priceUAN = p.purchase.c
                     }
-                    if (data.place === "Чанша") {
+                    if (data.place === "Changsha") {
                         priceUAN = p.purchase.d
                     }
                 }
             })
-            if (data.place === "Нанкин") {
+            if (data.place === "Nanjing") {
                 let key
                 weightState.forEach(s => {
                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
@@ -7294,7 +7297,7 @@ document.querySelector(".btn").onclick = (event) => {
                 })
             }
 
-            if (data.place === "Чанша") {
+            if (data.place === "Changsha") {
                 let key
                 weightState.forEach(s => {
                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
@@ -7309,7 +7312,7 @@ document.querySelector(".btn").onclick = (event) => {
                     }
                 })
             }
-            if (data.place === "Ганчжоу") {
+            if (data.place === "Guangzhou") {
                 let key
                 weightState.forEach(s => {
                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
@@ -7324,7 +7327,7 @@ document.querySelector(".btn").onclick = (event) => {
                     }
                 })
             }
-            if (data.place === "Сучжоу") {
+            if (data.place === "Suzhou") {
                 let key
                 weightState.forEach(s => {
                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
@@ -7339,7 +7342,7 @@ document.querySelector(".btn").onclick = (event) => {
                     }
                 })
             }
-            if (data.place === "Иу") {
+            if (data.place === "Yiwu") {
                 let key
                 weightState.forEach(s => {
                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
