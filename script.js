@@ -1,4 +1,9 @@
-
+for (let e of document.querySelectorAll('input[type="range"].slider-progress')) {
+    e.style.setProperty('--value', e.value);
+    e.style.setProperty('--min', e.min == '' ? '0' : e.min);
+    e.style.setProperty('--max', e.max == '' ? '100' : e.max);
+    e.addEventListener('input', () => e.style.setProperty('--value', e.value));
+}
 const kasachstan = [
     {
         "CHANGCHUN": {
@@ -7087,6 +7092,27 @@ document.querySelector("#countryDataList").onchange = (event) => {
         })
     }
 };
+document.querySelector("#rangeDT").oninput = (event) => {
+    const range = document.querySelector("#rangeDT")
+    document.querySelector("#data_dt").innerHTML = range.value;
+    console.log(range.value)
+}
+document.querySelector("#weightContainer").oninput = (event) => {
+    const range = document.querySelector("#weightContainer")
+    document.querySelector("#data_weight").innerHTML = range.value;
+    console.log(range.value)
+}
+document.querySelector("#volumeContainer").oninput = (event) => {
+    const range = document.querySelector("#volumeContainer")
+    document.querySelector("#data_volume").innerHTML = range.value;
+    console.log(range.value)
+}
+document.querySelector("#customRange3").oninput = (event) => {
+    const range = document.querySelector("#customRange3")
+    document.querySelector("#data_remoteness").innerHTML = range.value;
+    console.log(range.value)
+}
+
 document.querySelector("#datalistPlace").onchange = (event) => {
     event.preventDefault();
     let place = document.querySelector("#datalistPlace");
