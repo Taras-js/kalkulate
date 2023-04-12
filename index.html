@@ -339,7 +339,7 @@ https://toughengineer.github.io/demo/slider-styler*/
             }
             .two__block input {
                 height: 40px;
-                font-size: 1rem;
+                font-size: 8px;
             }
             .two__block select {
                 height: 40px;
@@ -388,7 +388,7 @@ https://toughengineer.github.io/demo/slider-styler*/
 <div class="container-xxl col" id="container">
     <form class="col g-5" style="width: 100%">
         <div style="display: flex; justify-content: center; padding: 15px 20px 40px 20px">
-            <h2 class="header_line">Калькулятор</h2>
+            <h2 class="header_line">Калькулятор ж/д сборки</h2>
         </div>
         <div id="wrap_block" class="wrap_block">
             <div class="one__block">
@@ -470,75 +470,88 @@ https://toughengineer.github.io/demo/slider-styler*/
                 </div>
             </div>
             <div class="two__block">
-                <div class="col-auto" style="margin-bottom: 20px">
-                    <label for="validationVolume" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
-                        м<sup>3</sup></label>
-                    <input type="number" class="form-control" style="margin-top: 5px; background-color: #EFEFEF;" id="validationVolume"
-                           placeholder="Введите число 0-25" required>
-                </div>
+<!--                <div class="col-auto" style="margin-bottom: 20px">-->
+<!--                    <label for="validationVolume" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,-->
+<!--                        м<sup>3</sup></label>-->
+<!--                    <input type="number" class="form-control" style="margin-top: 5px; background-color: #EFEFEF;" id="validationVolume"-->
+<!--                           placeholder="Введите число 0-25" required>-->
+                <!--                </div>-->
+                <label for="volumeContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
+                    м<sup>3</sup></label>
                 <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="volume">
-                    <label for="volumeContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
-                        м<sup>3</sup></label>
-                    <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                        <div><span style="color: red; font-size: 24px" id="data_volume">0</span></div>
+
+                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
+                        <div style="display: flex; flex-direction: row;">
+                            <div><span style="color: red; font-size: 24px" id="data_volume">0</span></div>
+                        </div>
+                        <input type="range" min="0" max="25" value="0" style="background-color: #EFEFEF;"  step="0.1" class="styled-slider slider-progress" id="volumeContainer">
                     </div>
-                    <input type="range" min="0" max="25" value="0"  step="0.1" class="styled-slider slider-progress" id="volumeContainer">
+
                 </div>
-                <div class="col-auto" style="margin-bottom: 20px">
-                    <label for="validationWeight" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
-                        кг</label>
-                    <input type="number" class="form-control" style="margin-top: 5px; background: #EFEFEF;" id="validationWeight"
-                           placeholder="Введите число 0-12750" required>
-                </div>
+<!--                <div class="col-auto" style="margin-bottom: 20px">-->
+<!--                    <label for="validationWeight" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,-->
+<!--                        кг</label>-->
+<!--                    <input type="number" class="form-control" style="margin-top: 5px; background: #EFEFEF;" id="validationWeight"-->
+<!--                           placeholder="Введите число 0-12750" required>-->
+<!--                </div>-->
+                <label for="weightContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
+                    кг</label>
                 <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="weight">
-                    <label for="weightContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
-                        кг</label>
-                    <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                        <div><span style="color: red; font-size: 24px" id="data_weight">0</span></div>
+
+                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
+                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
+                            <div><span style="color: red; font-size: 24px" id="data_weight">0</span></div>
+                        </div>
+                        <input type="range" min="0" max="12750" value="0"  step="10" style="background-color: #EFEFEF;" class="styled-slider slider-progress" id="weightContainer">
+
                     </div>
-                    <input type="range" min="0" max="12750" value="0"  step="10" class="styled-slider slider-progress" id="weightContainer">
+
                 </div>
-
-
-
-                <div class="col-auto" style="margin-bottom: 20px">
-                    <label for="validationDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
-                        ДТ</label>
-                    <input class="form-control" type="number" style="margin-top: 5px; background-color: #EFEFEF;" id="validationDT"
-                           placeholder="Введите целое число" required>
-                </div>
+<!--                <div class="col-auto" style="margin-bottom: 20px">-->
+<!--                    <label for="validationDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во-->
+<!--                        ДТ</label>-->
+<!--                    <input class="form-control" type="number" style="margin-top: 5px; background-color: #EFEFEF;" id="validationDT"-->
+<!--                           placeholder="Введите целое число" required>-->
+<!--                </div>-->
+                <label for="rangeDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
+                    ДТ</label>
                 <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="DT">
-                    <label for="rangeDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
-                        ДТ</label>
-                    <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                        <div><span style="color: red; font-size: 24px" id="data_dt">0</span></div>
+
+                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
+                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
+                            <div><span style="color: red; font-size: 24px" id="data_dt">0</span></div>
+                        </div>
+                        <input type="range" min="0" max="50" value="0" style="background-color: #EFEFEF;" class="styled-slider slider-progress" id="rangeDT">
                     </div>
-                    <input type="range" min="0" max="50" value="0" class="styled-slider slider-progress" id="rangeDT">
                 </div>
 
 
-                <div class="col-auto" style="margin-bottom: 20px" id="fromRussia">
-                    <label for="validationRemoteness" style="border-bottom: 1px solid red; display: inline;"
-                           class="form-label">Расстояние
-                        до двери по РФ, км</label>
-                    <input type="number" class="form-control" style="margin-top: 5px; background-color: #EFEFEF"
-                           id="validationRemoteness" placeholder="Введите целое число" value="" required>
-                </div>
+<!--                <div class="col-auto" style="margin-bottom: 20px" id="fromRussia">-->
+<!--                    <label for="validationRemoteness" style="border-bottom: 1px solid red; display: inline;"-->
+<!--                           class="form-label">Расстояние-->
+<!--                        до двери по РФ, км</label>-->
+<!--                    <input type="number" class="form-control" style="margin-top: 5px; background-color: #EFEFEF"-->
+<!--                           id="validationRemoteness" placeholder="Введите целое число" value="" required>-->
+<!--                </div>-->
+                <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
+                    до двери по РФ, км</label>
                 <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="rangeRussia">
-                    <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
-                        до двери по РФ, км</label>
-                    <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                        <div><span style="color: red; font-size: 24px" id="data_remoteness">0</span></div>
+
+                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
+                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
+                            <div><span style="color: red; font-size: 24px" id="data_remoteness">0</span></div>
+                        </div>
+                        <input type="range" min="0" max="1000" value="0" style="background-color: #EFEFEF;" step="10" class="styled-slider slider-progress" id="customRange3" >
                     </div>
-                    <input type="range" min="0" max="1000" value="0" step="10" class="styled-slider slider-progress" id="customRange3" >
+
                 </div>
             </div>
         </div>
 
-        <div class="col-auto" style="padding-top: 20px; display: flex; align-items: center; justify-content: center">
-            <button class="btn btn-outline-danger" type="submit">Рассчитать
-            </button>
-        </div>
+<!--        <div class="col-auto" style="padding-top: 20px; display: flex; align-items: center; justify-content: center">-->
+<!--            <button class="btn btn-outline-danger" type="submit">Рассчитать-->
+<!--            </button>-->
+<!--        </div>-->
     </form>
     <div>
         <div style="display: flex; justify-content: center; padding: 20px">
