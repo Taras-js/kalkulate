@@ -426,7 +426,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="countryDataList" class="form-label" style="border-bottom: 1px solid red; display: inline;">Страна
                         доставки</label>
-                    <select class="form-select" id="countryDataList" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="countryDataList" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="Россия" selected>Россия</option>
                         <option value="Казахстан">Казахстан</option>
                     </select>
@@ -434,7 +434,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="datalistPlace" class="form-label" style="border-bottom: 1px solid red; display: inline;">Место
                         консолидации</label>
-                    <select class="form-select" id="datalistPlace" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="datalistPlace" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="Nanjing" selected>Nanjing</option>
                         <option value="Guangzhou">Guangzhou</option>
                         <option value="Changsha">Changsha</option>
@@ -444,7 +444,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="statelist" class="form-label" style="border-bottom: 1px solid red; display: inline;">Город
                         забора</label>
-                    <select class="form-select" id="statelist" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="statelist" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="CHANGCHUN">CHANGCHUN</option>
                         <option value="CHANGZHOU">CHANGZHOU</option>
                         <option value="CHONGQING&CHENGDU">CHONGQING&CHENGDU</option>
@@ -493,7 +493,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                     <label for="conditionsDataList" class="form-label"
                            style="border-bottom: 1px solid red; display: inline;">Условия
                         поставки</label>
-                    <select class="form-select" id="conditionsDataList" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="conditionsDataList" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="ExW" selected>ExW</option>
                         <option value="FCA">FCA</option>
                         <option value="FOB">FOB</option>
@@ -509,15 +509,13 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <!--                </div>-->
                 <label for="volumeContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
                     м<sup>3</sup></label>
-                <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="volume">
-
-                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
-                        <div style="display: flex; flex-direction: row;">
-                            <div><span style="color: red; font-size: 24px" id="data_volume">0</span></div>
+                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column;" id="volume">
+                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
+                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
+                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_volume">0</span><span style="padding-left: 3px">м<sup>3</sup></span></div>
                         </div>
-                        <input type="range" min="0" max="25" value="0" style="background-color: #EFEFEF;"  step="0.1" class="styled-slider slider-progress" id="volumeContainer">
+                        <input type="range" min="0" max="25" value="0" style="position: absolute; width:100%; bottom: 0; "  step="0.1" class="styled-slider slider-progress" id="volumeContainer">
                     </div>
-
                 </div>
 <!--                <div class="col-auto" style="margin-bottom: 20px">-->
 <!--                    <label for="validationWeight" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,-->
@@ -527,16 +525,13 @@ https://toughengineer.github.io/demo/slider-styler*/
 <!--                </div>-->
                 <label for="weightContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
                     кг</label>
-                <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="weight">
-
-                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
-                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                            <div><span style="color: red; font-size: 24px" id="data_weight">0</span></div>
+                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column" id="weight">
+                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
+                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
+                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_weight">0</span><span style="padding-left: 3px">кг</span></div>
                         </div>
-                        <input type="range" min="0" max="12750" value="0"  step="10" style="background-color: #EFEFEF;" class="styled-slider slider-progress" id="weightContainer">
-
+                        <input type="range" min="0" max="12750" value="0"  step="10" style="position: absolute; width:100%; bottom: 0; " class="styled-slider slider-progress" id="weightContainer">
                     </div>
-
                 </div>
 <!--                <div class="col-auto" style="margin-bottom: 20px">-->
 <!--                    <label for="validationDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во-->
@@ -546,13 +541,12 @@ https://toughengineer.github.io/demo/slider-styler*/
 <!--                </div>-->
                 <label for="rangeDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
                     ДТ</label>
-                <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="DT">
-
-                    <div style="display: flex; flex-direction: column; height: 50px; background-color: #EFEFEF;">
-                        <div style="display: flex; flex-direction: row; height: 30px; background-color: #EFEFEF;">
-                            <div><span style="color: red; font-size: 24px" id="data_dt">0</span></div>
+                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column" id="DT">
+                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
+                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
+                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_dt">0</span><span style="padding-left: 3px">ед</span></div>
                         </div>
-                        <input type="range" min="0" max="50" value="0" style="background-color: #EFEFEF;" class="styled-slider slider-progress" id="rangeDT">
+                        <input type="range" min="0" max="50" value="0" style="position: absolute; width:100%; bottom: 0; " class="styled-slider slider-progress" id="rangeDT">
                     </div>
                 </div>
 
@@ -566,10 +560,10 @@ https://toughengineer.github.io/demo/slider-styler*/
 <!--                </div>-->
                 <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
                     до двери по РФ, км</label>
-                <div class="col-auto" style="margin-bottom: 20px; display: flex; flex-direction: column" id="rangeRussia">
+                <div class="col-auto" style="margin-top: 3px; display: flex; flex-direction: column" id="rangeRussia">
                     <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
-                        <div style="display: flex; flex-direction: row; z-index: 2; height: 40px; background-color: #EFEFEF;">
-                            <div><span style="color: red; font-size: 24px" id="data_remoteness">0</span></div>
+                        <div style="display: flex; flex-direction: row; z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
+                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_remoteness">0</span><span style="padding-left: 3px">км</span></div>
                         </div>
                         <input type="range" min="0" style="position: absolute; width:100%; bottom: 0; " max="1000" value="0"  step="10" class="styled-slider slider-progress" id="customRange3" >
                     </div>
@@ -606,7 +600,7 @@ https://toughengineer.github.io/demo/slider-styler*/
         </div>
 
 
-        <div class="col-auto" style="padding-top: 18px; display: flex; align-items: center; justify-content: center">
+        <div class="col-auto" style="padding-top: 0px; display: flex; align-items: center; justify-content: center">
             <button  type="button" class="btn btn-danger auto" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     >Оставить заявку на звонок
             </button>
