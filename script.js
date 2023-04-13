@@ -6973,7 +6973,7 @@ const weightState = [
 var rangeRussia = document.querySelector("#customRange3")
 var rangeWeight = document.querySelector("#weightContainer")
 var rangeVolume = document.querySelector("#volumeContainer")
-var rangeDT = document.querySelector("#rangeDT")
+
 document.querySelector("#countryDataList").onchange = (event) => {
     event.preventDefault();
     let result = document.querySelector("#textResult");
