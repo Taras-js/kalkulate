@@ -7095,26 +7095,7 @@ document.querySelector("#countryDataList").onchange = (event) => {
         })
     }
 };
-document.querySelector("#rangeDT").oninput = (event) => {
-    const range = document.querySelector("#rangeDT")
-    document.querySelector("#data_dt").innerHTML = range.value;
-    console.log(range.value)
-}
-document.querySelector("#weightContainer").oninput = (event) => {
-    const range = document.querySelector("#weightContainer")
-    document.querySelector("#data_weight").innerHTML = range.value;
-    console.log(range.value)
-}
-document.querySelector("#volumeContainer").oninput = (event) => {
-    const range = document.querySelector("#volumeContainer")
-    document.querySelector("#data_volume").innerHTML = range.value;
-    console.log(range.value)
-}
-document.querySelector("#customRange3").oninput = (event) => {
-    const range = document.querySelector("#customRange3")
-    document.querySelector("#data_remoteness").innerHTML = range.value;
-    console.log(range.value)
-}
+
 
 document.querySelector("#datalistPlace").onchange = (event) => {
     event.preventDefault();
@@ -7185,193 +7166,498 @@ document.querySelector("#datalistPlace").onchange = (event) => {
         })
     }
 };
-document.querySelector(".btn").onclick = (event) => {
-    event.preventDefault();
-    let weight = document.querySelector("#validationWeight");
-    let volume = document.querySelector("#validationVolume");
+// document.querySelector(".btn").onclick = (event) => {
+//     event.preventDefault();
+//     let weight = document.querySelector("#validationWeight");
+//     let volume = document.querySelector("#validationVolume");
+//     let place = document.querySelector("#datalistPlace");
+//     let DT = document.querySelector("#validationDT");
+//     let state = document.querySelector("#statelist");
+//     let conditions = document.querySelector("#conditionsDataList");
+//     let remoteness = document.querySelector("#validationRemoteness");
+//     let text = document.querySelector("#textAlert");
+//
+//
+//
+//     if (weight.value !== "" && weight.value !== "" && volume.value !== "" && place.value !== "" &&
+//         DT.value !== "" && state.value !== "" && conditions.value !== "") {
+//         const weightValidation = Math.round(Number(weight.value.replace(/[^0-9]/g, "")));
+//         const volumeValidation = Math.ceil(Number(volume.value));
+//         const DTValidation = Math.round(Number(DT.value.replace(/[^0-9]/g, "")));
+//         const remotenessValidation = Math.round(Number(remoteness ? remoteness.value.replace(/[^0-9]/g, "") : 0));
+//         console.log("remotenessValidation", remotenessValidation)
+//         if (weightValidation >= 0 && weightValidation < 12751) {
+//             console.log("Вес:", weightValidation)
+//         } else {
+//             text.innerHTML = `<p style="color: red">* Ошибка введите вес в диапазоне от 0 до 12750 кг.</p>`
+//         }
+//         console.log("Объем:", volumeValidation)
+//         if (volumeValidation < 26) {
+//             console.log("Объем1:", volumeValidation)
+//         } else {
+//             text.innerHTML = `<p style="color: red">* Ошибка введите объем в диапазоне от 0 до 25 м3.</p>`
+//         }
+//         if (typeof DTValidation === "number") {
+//             console.log("DT:", DTValidation)
+//         } else {
+//             text.innerHTML = `<p style="color: red">* Ошибка введите в поле количество DT целое число.</p>`
+//         }
+//         if (remotenessValidation && remotenessValidation > 0) {
+//             console.log("remotenessValidation:", remotenessValidation)
+//         } else {
+//             text.innerHTML = `<p style="color: red">* Ошибка введите в поле расстояние до двери целое число.</p>`
+//         }
+//
+//         console.log("state.value:", state.value);
+//         const data = {
+//             weight: Math.round(weightValidation),
+//             volume: Math.ceil(volumeValidation),
+//             place: place.value,
+//             dt: DTValidation,
+//             state: state.value,
+//             remoteness: remotenessValidation,
+//             conditions: conditions.value
+//         }
+//         console.log("data:", data)
+//         if (data) {
+//             let priceRub = 'Нет данных'
+//             let priceUAN = 'Нет данных'
+//             let priceUSDT = 'Нет данных'
+//             let priceUSDTKasahstan = 'Нет данных'
+//             distance.forEach(p => {
+//                 if (data.remoteness > p.distanceFrom && data.remoteness <= p.distanceBefore) {
+//                     if (data.weight < 1500) {
+//                         if (data.volume < 9) {
+//                             priceRub = p.weight.a
+//                         } else {
+//                             priceRub = p.weight.b
+//                         }
+//                     }
+//                     if (data.weight < 2500 && data.weight >= 1500) {
+//                         if (data.volume < 20) {
+//                             priceRub = p.weight.b
+//                         } else {
+//                             priceRub = p.weight.c
+//                         }
+//                     }
+//                     if (data.weight >= 2500) {
+//                         priceRub = p.weight.c
+//                     }
+//                 }
+//             })
+//
+//             purchaseFromWeight.forEach(p => {
+//                 if (data.weight >= p.weightFrom && data.weight <= p.distanceBefore) {
+//                     if (data.place === "Nanjing") {
+//                         priceUAN = p.purchase.a
+//                     }
+//                     if (data.place === "Guangzhou") {
+//                         priceUAN = p.purchase.b
+//                     }
+//                     if (data.place === "Suzhou") {
+//                         priceUAN = p.purchase.c
+//                     }
+//                     if (data.place === "Changsha") {
+//                         priceUAN = p.purchase.d
+//                     }
+//                 }
+//             })
+//             if (data.place === "Nanjing") {
+//                 let key
+//                 weightState.forEach(s => {
+//                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
+//                         key = s.key
+//                         console.log("key:", key)
+//                     }
+//                 })
+//                 nankin.forEach(i => {
+//                     if (data.state === Object.keys(i).toString()) {
+//                         priceUSDT = i[data.state][key];
+//                         console.log("priceUSDT:", priceUSDT, i, key)
+//                     }
+//                 })
+//             }
+//
+//             if (data.place === "Changsha") {
+//                 let key
+//                 weightState.forEach(s => {
+//                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
+//                         key = s.key
+//                         console.log("key:", key)
+//                     }
+//                 })
+//                 chanscha.forEach(i => {
+//                     if (data.state === Object.keys(i).toString()) {
+//                         priceUSDT = i[data.state][key];
+//                         console.log("priceUSDT:", priceUSDT, i, key)
+//                     }
+//                 })
+//             }
+//             if (data.place === "Guangzhou") {
+//                 let key
+//                 weightState.forEach(s => {
+//                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
+//                         key = s.key
+//                         console.log("key:", key)
+//                     }
+//                 })
+//                 ganchou.forEach(i => {
+//                     if (data.state === Object.keys(i).toString()) {
+//                         priceUSDT = i[data.state][key];
+//                         console.log("priceUSDT:", priceUSDT, i, key)
+//                     }
+//                 })
+//             }
+//             if (data.place === "Suzhou") {
+//                 let key
+//                 weightState.forEach(s => {
+//                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
+//                         key = s.key
+//                         console.log("key:", key)
+//                     }
+//                 })
+//                 suchgou.forEach(i => {
+//                     if (data.state === Object.keys(i).toString()) {
+//                         priceUSDT = i[data.state][key];
+//                         console.log("priceUSDTR:", priceUSDT, i, key)
+//                     }
+//                 })
+//             }
+//             if (data.place === "Yiwu") {
+//                 let key
+//                 weightState.forEach(s => {
+//                     if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
+//                         key = s.key
+//                         console.log("key:", key)
+//                     }
+//                 })
+//                 kasachstan.forEach(i => {
+//                     if (data.state === Object.keys(i).toString()) {
+//                         priceUSDTKasahstan = i[data.state][key];
+//                         console.log("priceUSDT:", priceUSDTKasahstan, i, key)
+//                     }
+//                 })
+//             }
+//             text.innerHTML = ""
+//             const rub = document.querySelector("#costRUB")
+//                 if(rub)rub.innerText = `${priceRub || ''}`;
+//                 const usdtr = document.querySelector("#costUSDT")
+//                 if(usdtr)usdtr.innerText = `${Math.round(priceUSDT) || ''}`;
+//                 const uan = document.querySelector("#costYAN")
+//                     if(uan)uan.innerText = `${priceUAN || ''}`;
+//                     const usdtk = document.querySelector("#costUSDTK");
+//                     if(usdtk)usdtk.innerText = `${Math.round(priceUSDTKasahstan) || ''}`;
+//
+//         }
+//     } else {
+//         text.innerHTML = `<p style="color: red">* Ошибка все поля обязательны для заполнения</p>`
+//     }
+// }
+
+document.querySelector("#rangeDT").oninput = (event) => {
+    const range = document.querySelector("#rangeDT");
+    document.querySelector("#data_dt").innerHTML = range.value;
+}
+var rangeRussia = document.querySelector("#customRange3")
+var rangeWeight = document.querySelector("#weightContainer")
+var rangeVolume = document.querySelector("#volumeContainer")
+document.querySelector("#weightContainer").oninput = (event) => {
+    const range = document.querySelector("#weightContainer")
+    document.querySelector("#data_weight").innerHTML = range.value;
+    let priceRub = '0'
+    let priceUAN = 'Нет данных'
+    let priceUSDT = 'Нет данных'
+    let priceUSDTKasahstan = 'Нет данных'
+    console.log("Данные:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
     let place = document.querySelector("#datalistPlace");
-    let DT = document.querySelector("#validationDT");
     let state = document.querySelector("#statelist");
-    let conditions = document.querySelector("#conditionsDataList");
-    let remoteness = document.querySelector("#validationRemoteness");
-    let text = document.querySelector("#textAlert");
-
-
-
-    if (weight.value !== "" && weight.value !== "" && volume.value !== "" && place.value !== "" &&
-        DT.value !== "" && state.value !== "" && conditions.value !== "") {
-        const weightValidation = Math.round(Number(weight.value.replace(/[^0-9]/g, "")));
-        const volumeValidation = Math.ceil(Number(volume.value));
-        const DTValidation = Math.round(Number(DT.value.replace(/[^0-9]/g, "")));
-        const remotenessValidation = Math.round(Number(remoteness ? remoteness.value.replace(/[^0-9]/g, "") : 0));
-        console.log("remotenessValidation", remotenessValidation)
-        if (weightValidation >= 0 && weightValidation < 12751) {
-            console.log("Вес:", weightValidation)
-        } else {
-            text.innerHTML = `<p style="color: red">* Ошибка введите вес в диапазоне от 0 до 12750 кг.</p>`
-        }
-        console.log("Объем:", volumeValidation)
-        if (volumeValidation < 26) {
-            console.log("Объем1:", volumeValidation)
-        } else {
-            text.innerHTML = `<p style="color: red">* Ошибка введите объем в диапазоне от 0 до 25 м3.</p>`
-        }
-        if (typeof DTValidation === "number") {
-            console.log("DT:", DTValidation)
-        } else {
-            text.innerHTML = `<p style="color: red">* Ошибка введите в поле количество DT целое число.</p>`
-        }
-        if (remotenessValidation && remotenessValidation > 0) {
-            console.log("remotenessValidation:", remotenessValidation)
-        } else {
-            text.innerHTML = `<p style="color: red">* Ошибка введите в поле расстояние до двери целое число.</p>`
-        }
-
-        console.log("state.value:", state.value);
-        const data = {
-            weight: Math.round(weightValidation),
-            volume: Math.ceil(volumeValidation),
-            place: place.value,
-            dt: DTValidation,
-            state: state.value,
-            remoteness: remotenessValidation,
-            conditions: conditions.value
-        }
-        console.log("data:", data)
-        if (data) {
-            let priceRub = 'Нет данных'
-            let priceUAN = 'Нет данных'
-            let priceUSDT = 'Нет данных'
-            let priceUSDTKasahstan = 'Нет данных'
-            distance.forEach(p => {
-                if (data.remoteness > p.distanceFrom && data.remoteness <= p.distanceBefore) {
-                    if (data.weight < 1500) {
-                        if (data.volume < 9) {
-                            priceRub = p.weight.a
-                        } else {
-                            priceRub = p.weight.b
-                        }
-                    }
-                    if (data.weight < 2500 && data.weight >= 1500) {
-                        if (data.volume < 20) {
-                            priceRub = p.weight.b
-                        } else {
-                            priceRub = p.weight.c
-                        }
-                    }
-                    if (data.weight >= 2500) {
-                        priceRub = p.weight.c
-                    }
-                }
-            })
-
-            purchaseFromWeight.forEach(p => {
-                if (data.weight >= p.weightFrom && data.weight <= p.distanceBefore) {
-                    if (data.place === "Nanjing") {
-                        priceUAN = p.purchase.a
-                    }
-                    if (data.place === "Guangzhou") {
-                        priceUAN = p.purchase.b
-                    }
-                    if (data.place === "Suzhou") {
-                        priceUAN = p.purchase.c
-                    }
-                    if (data.place === "Changsha") {
-                        priceUAN = p.purchase.d
-                    }
-                }
-            })
-            if (data.place === "Nanjing") {
-                let key
-                weightState.forEach(s => {
-                    if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
-                        key = s.key
-                        console.log("key:", key)
-                    }
-                })
-                nankin.forEach(i => {
-                    if (data.state === Object.keys(i).toString()) {
-                        priceUSDT = i[data.state][key];
-                        console.log("priceUSDT:", priceUSDT, i, key)
-                    }
-                })
+    purchaseFromWeight.forEach(p => {
+        if (rangeWeight.value >= p.weightFrom && rangeWeight.value <= p.distanceBefore) {
+            if (place.value === "Nanjing") {
+                priceUAN = p.purchase.a
             }
-
-            if (data.place === "Changsha") {
-                let key
-                weightState.forEach(s => {
-                    if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
-                        key = s.key
-                        console.log("key:", key)
-                    }
-                })
-                chanscha.forEach(i => {
-                    if (data.state === Object.keys(i).toString()) {
-                        priceUSDT = i[data.state][key];
-                        console.log("priceUSDT:", priceUSDT, i, key)
-                    }
-                })
+            if (place.value === "Guangzhou") {
+                priceUAN = p.purchase.b
             }
-            if (data.place === "Guangzhou") {
-                let key
-                weightState.forEach(s => {
-                    if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
-                        key = s.key
-                        console.log("key:", key)
-                    }
-                })
-                ganchou.forEach(i => {
-                    if (data.state === Object.keys(i).toString()) {
-                        priceUSDT = i[data.state][key];
-                        console.log("priceUSDT:", priceUSDT, i, key)
-                    }
-                })
+            if (place.value === "Suzhou") {
+                priceUAN = p.purchase.c
             }
-            if (data.place === "Suzhou") {
-                let key
-                weightState.forEach(s => {
-                    if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
-                        key = s.key
-                        console.log("key:", key)
-                    }
-                })
-                suchgou.forEach(i => {
-                    if (data.state === Object.keys(i).toString()) {
-                        priceUSDT = i[data.state][key];
-                        console.log("priceUSDTR:", priceUSDT, i, key)
-                    }
-                })
+            if (place.value === "Changsha") {
+                priceUAN = p.purchase.d
             }
-            if (data.place === "Yiwu") {
-                let key
-                weightState.forEach(s => {
-                    if (data.weight > s.weightFrom && data.weight < s.weightBefore) {
-                        key = s.key
-                        console.log("key:", key)
-                    }
-                })
-                kasachstan.forEach(i => {
-                    if (data.state === Object.keys(i).toString()) {
-                        priceUSDTKasahstan = i[data.state][key];
-                        console.log("priceUSDT:", priceUSDTKasahstan, i, key)
-                    }
-                })
-            }
-            text.innerHTML = ""
-            const rub = document.querySelector("#costRUB")
-                if(rub)rub.innerText = `${priceRub || ''}`;
-                const usdtr = document.querySelector("#costUSDT")
-                if(usdtr)usdtr.innerText = `${Math.round(priceUSDT) || ''}`;
-                const uan = document.querySelector("#costYAN")
-                    if(uan)uan.innerText = `${priceUAN || ''}`;
-                    const usdtk = document.querySelector("#costUSDTK");
-                    if(usdtk)usdtk.innerText = `${Math.round(priceUSDTKasahstan) || ''}`;
-
         }
-    } else {
-        text.innerHTML = `<p style="color: red">* Ошибка все поля обязательны для заполнения</p>`
+    })
+    if (place.value === "Nanjing") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        nankin.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
     }
+
+    if (place.value === "Changsha") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        chanscha.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Guangzhou") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        ganchou.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Suzhou") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        suchgou.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDTR:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Yiwu") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        kasachstan.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDTKasahstan = i[state.value][key];
+                console.log("priceUSDT:", priceUSDTKasahstan, i, key)
+            }
+        })
+    }
+
+    const usdtr = document.querySelector("#costUSDT")
+    if(usdtr)usdtr.innerText = `${Math.round(priceUSDT) || ''}`;
+    const uan = document.querySelector("#costYAN")
+    if(uan)uan.innerText = `${priceUAN || ''}`;
+    const usdtk = document.querySelector("#costUSDTK");
+    if(usdtk)usdtk.innerText = `${Math.round(priceUSDTKasahstan) || ''}`;
+    distance.forEach(p => {
+        if (rangeRussia.value > p.distanceFrom && rangeRussia.value <= p.distanceBefore) {
+            if (rangeWeight.value < 1500) {
+                if (rangeVolume.value < 9) {
+                    priceRub = p.weight.a
+                } else if (rangeVolume.value < 20) {
+                    priceRub = p.weight.b
+                } else {
+                    priceRub = p.weight.c
+                }
+            }
+            if (rangeWeight.value < 2500 && rangeWeight.value >= 1500) {
+                if (rangeVolume.value < 20) {
+                    priceRub = p.weight.b
+                } else {
+                    priceRub = p.weight.c
+                }
+            }
+            if (rangeWeight.value >= 2500) {
+                priceRub = p.weight.c
+            }
+        }
+    })
+    const rub = document.querySelector("#costRUB")
+    if(rub && rangeWeight.value > 0 && rangeVolume.value > 0)rub.innerText = `${priceRub}`;
+}
+
+document.querySelector("#volumeContainer").oninput = (event) => {
+    const range = document.querySelector("#volumeContainer")
+    document.querySelector("#data_volume").innerHTML = range.value;
+    let priceRub = '0'
+    let priceUAN = 'Нет данных'
+    let priceUSDT = 'Нет данных'
+    let priceUSDTKasahstan = 'Нет данных'
+    console.log("Россия:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
+    let place = document.querySelector("#datalistPlace");
+    let state = document.querySelector("#statelist");
+    purchaseFromWeight.forEach(p => {
+        if (rangeWeight.value >= p.weightFrom && rangeWeight.value <= p.distanceBefore) {
+            if (place.value === "Nanjing") {
+                priceUAN = p.purchase.a
+            }
+            if (place.value === "Guangzhou") {
+                priceUAN = p.purchase.b
+            }
+            if (place.value === "Suzhou") {
+                priceUAN = p.purchase.c
+            }
+            if (place.value === "Changsha") {
+                priceUAN = p.purchase.d
+            }
+        }
+    })
+    if (place.value === "Nanjing") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        nankin.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
+    }
+
+    if (place.value === "Changsha") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        chanscha.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Guangzhou") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        ganchou.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDT:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Suzhou") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        suchgou.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDT = i[state.value][key];
+                console.log("priceUSDTR:", priceUSDT, i, key)
+            }
+        })
+    }
+    if (place.value === "Yiwu") {
+        let key
+        weightState.forEach(s => {
+            if (rangeWeight.value > s.weightFrom && rangeWeight.value < s.weightBefore) {
+                key = s.key
+                console.log("key:", key)
+            }
+        })
+        kasachstan.forEach(i => {
+            if (state.value === Object.keys(i).toString()) {
+                priceUSDTKasahstan = i[state.value][key];
+                console.log("priceUSDT:", priceUSDTKasahstan, i, key)
+            }
+        })
+    }
+    console.log("Россия:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
+    distance.forEach(p => {
+        if (rangeRussia.value > p.distanceFrom && rangeRussia.value <= p.distanceBefore) {
+            if (rangeWeight.value < 1500) {
+                if (rangeVolume.value < 9) {
+                    priceRub = p.weight.a
+                } else if (rangeVolume.value < 20) {
+                    priceRub = p.weight.b
+                } else {
+                    priceRub = p.weight.c
+                }
+            }
+            if (rangeWeight.value < 2500 && rangeWeight.value >= 1500) {
+                if (rangeVolume.value < 20) {
+                    priceRub = p.weight.b
+                } else {
+                    priceRub = p.weight.c
+                }
+            }
+            if (rangeWeight.value >= 2500) {
+                priceRub = p.weight.c
+            }
+        }
+    })
+    const rub = document.querySelector("#costRUB")
+    if(rub && rangeWeight.value > 0 && rangeVolume.value > 0)rub.innerText = `${priceRub}`;
+
+
 }
 
 
+document.querySelector("#customRange3").oninput = (event) => {
+    const range = document.querySelector("#customRange3")
+    document.querySelector("#data_remoteness").innerHTML = range.value;
+
+    let priceRub = '0'
+    console.log("Россия:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
+    distance.forEach(p => {
+        if (rangeRussia.value > p.distanceFrom && rangeRussia.value <= p.distanceBefore) {
+            if (rangeWeight.value < 1500) {
+                if (rangeVolume.value < 9) {
+                    priceRub = p.weight.a
+                } else {
+                    priceRub = p.weight.b
+                }
+            }
+            if (rangeWeight.value < 2500 && rangeWeight.value >= 1500) {
+                if (rangeVolume.value < 20) {
+                    priceRub = p.weight.b
+                } else {
+                    priceRub = p.weight.c
+                }
+            }
+            if (rangeWeight.value >= 2500) {
+                priceRub = p.weight.c
+            }
+        }
+    })
+    const rub = document.querySelector("#costRUB")
+    if(rub && rangeWeight.value > 0 && rangeVolume.value > 0)rub.innerText = `${priceRub}`;
+}
 
