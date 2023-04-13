@@ -14,7 +14,8 @@
         }
 
         .header_line {
-            font-size: 80px;
+            font-size: 70px;
+
             line-height: 80px;
             width: max-content;
             position: relative;
@@ -79,7 +80,8 @@
         }
         .two__block input {
             height: 100px;
-            font-size: 35px;
+            font-size: 22px;
+            margin-bottom: 11px;
         }
         .two__block select {
             height: 100px;
@@ -139,7 +141,7 @@ https://toughengineer.github.io/demo/slider-styler*/
         }
 
         input[type=range].styled-slider::-webkit-slider-runnable-track {
-            height: 4px;
+            height: 10px;
             /*border: 0px solid #b2b2b2;*/
             border-radius: 0.5em;
             background: #efefef;
@@ -319,8 +321,65 @@ https://toughengineer.github.io/demo/slider-styler*/
             border-color: red;
 
         }
-
+        .range_big {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            height: 150px;
+        }
+        .range_low {
+            display: flex;
+            z-index: 2;
+            height: 120px;
+            background-color: #EFEFEF;
+            border-radius: 5px;
+        }
+        .costs {
+            color: black;
+            font-size: 64px;
+            padding-left: 10px;
+            opacity: 0.7;
+        }
+        .costs_pack {
+            color: black;
+            font-size: 45px;
+            padding-left: 3px;
+            opacity: 0.7;
+        }
         @media screen and (min-width: 1100px) {
+            input[type=range].styled-slider::-webkit-slider-runnable-track {
+                height: 4px;
+                /*border: 0px solid #b2b2b2;*/
+                border-radius: 0.5em;
+                background: #efefef;
+                box-shadow: none;
+
+            }
+            .costs {
+                color: black;
+                font-size: 24px;
+                padding-left: 10px;
+                opacity: 0.7;
+            }
+            .costs_pack {
+                font-size: 24px;
+                padding-left: 3px;
+                opacity: 0.7;
+            }
+            .range_big {
+                display: flex;
+                position: relative;
+                flex-direction: column;
+                height: 60px;
+            }
+            .range_low {
+                display: flex;
+                z-index: 2;
+                height: 41px;
+                background-color: #EFEFEF;
+                border-radius: 5px;
+            }
+
             .header_line {
                 font-size: 60px;
                 line-height: 60px;
@@ -426,7 +485,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="countryDataList" class="form-label" style="border-bottom: 1px solid red; display: inline;">Страна
                         доставки</label>
-                    <select class="form-select" id="countryDataList" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="countryDataList" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="Россия" selected>Россия</option>
                         <option value="Казахстан">Казахстан</option>
                     </select>
@@ -434,7 +493,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="datalistPlace" class="form-label" style="border-bottom: 1px solid red; display: inline;">Место
                         консолидации</label>
-                    <select class="form-select" id="datalistPlace" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="datalistPlace" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="Nanjing" selected>Nanjing</option>
                         <option value="Guangzhou">Guangzhou</option>
                         <option value="Changsha">Changsha</option>
@@ -444,7 +503,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                 <div class="col-auto" style="margin-bottom: 20px">
                     <label for="statelist" class="form-label" style="border-bottom: 1px solid red; display: inline;">Город
                         забора</label>
-                    <select class="form-select" id="statelist" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="statelist" style="margin-top: 5px;  background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="CHANGCHUN">CHANGCHUN</option>
                         <option value="CHANGZHOU">CHANGZHOU</option>
                         <option value="CHONGQING&CHENGDU">CHONGQING&CHENGDU</option>
@@ -493,7 +552,7 @@ https://toughengineer.github.io/demo/slider-styler*/
                     <label for="conditionsDataList" class="form-label"
                            style="border-bottom: 1px solid red; display: inline;">Условия
                         поставки</label>
-                    <select class="form-select" id="conditionsDataList" style="margin-top: 5px; height: 45px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
+                    <select class="form-select" id="conditionsDataList" style="margin-top: 5px; background-color: #EFEFEF" aria-label="Выберите страну доставки">
                         <option value="ExW" selected>ExW</option>
                         <option value="FCA">FCA</option>
                         <option value="FOB">FOB</option>
@@ -503,64 +562,78 @@ https://toughengineer.github.io/demo/slider-styler*/
             <div class="two__block">
                 <label for="volumeContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Объем,
                     м<sup>3</sup></label>
-                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column;" id="volume">
-                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
-                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
-                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_volume">0</span><span style="padding-left: 3px">м<sup>3</sup></span></div>
+                <div class="col-auto" style="margin-bottom: 0px; margin-top: 3px; display: flex; flex-direction: column;" id="volume">
+                    <div class="range_big">
+                        <div class="range_low">
+                            <div><span class="costs" id="data_volume">0</span><span class="costs_pack">м<sup>3</sup></span></div>
                         </div>
                         <input type="range" min="0" max="25" value="0" style="position: absolute; width:100%; bottom: 0; "  step="0.1" class="styled-slider slider-progress" id="volumeContainer">
                     </div>
                 </div>
                 <label for="weightContainer" class="form-label" style="border-bottom: 1px solid red; display: inline;">Вес,
                     кг</label>
-                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column" id="weight">
-                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
-                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
-                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_weight">0</span><span style="padding-left: 3px">кг</span></div>
+                <div class="col-auto" style="margin-bottom: 0px; margin-top: 3px; display: flex; flex-direction: column" id="weight">
+                    <div class="range_big">
+                        <div class="range_low">
+                            <div><span class="costs" id="data_weight">0</span><span class="costs_pack">кг</span></div>
                         </div>
                         <input type="range" min="0" max="12500" value="0"  step="10" style="position: absolute; width:100%; bottom: 0; " class="styled-slider slider-progress" id="weightContainer">
                     </div>
                 </div>
                 <label for="rangeDT" class="form-label" style="border-bottom: 1px solid red; display: inline;">Кол-во
                     ДТ</label>
-                <div class="col-auto" style="margin-bottom: 18px; margin-top: 3px; display: flex; flex-direction: column" id="DT">
-                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
-                        <div style="display: flex; flex-direction: row;  z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
-                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_dt">0</span><span style="padding-left: 3px">ед</span></div>
+                <div class="col-auto" style="margin-bottom: 0px; margin-top: 3px; display: flex; flex-direction: column" id="DT">
+                    <div class="range_big">
+                        <div class="range_low">
+                            <div><span class="costs" id="data_dt">0</span><span class="costs_pack">ед</span></div>
                         </div>
                         <input type="range" min="0" max="50" value="0" style="position: absolute; width:100%; bottom: 0; " class="styled-slider slider-progress" id="rangeDT">
                     </div>
                 </div>
-                <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
-                    до двери по РФ, км</label>
-                <div class="col-auto" style="margin-top: 3px; display: flex; flex-direction: column" id="rangeRussia">
-                    <div style="display: flex; position: relative; flex-direction: column; height: 50px;">
-                        <div style="display: flex; flex-direction: row; z-index: 2; height: 40px; background-color: #EFEFEF; border-radius: 5px">
-                            <div><span style="color: black; font-size: 24px; padding-left: 10px;" id="data_remoteness">0</span><span style="padding-left: 3px">км</span></div>
+                <div id="fromRussia" style="opacity: 1">
+                    <label for="customRange3" class="form-label" style="border-bottom: 1px solid red; display: inline;">Расстояние
+                        до двери по РФ, км</label>
+                    <div class="col-auto" style="margin-top: 3px; display: flex; flex-direction: column" id="rangeRussia">
+                        <div class="range_big">
+                            <div class="range_low">
+                                <div><span class="costs" id="data_remoteness">0</span><span class="costs_pack">км</span></div>
+                            </div>
+                            <input type="range" min="0" style="position: absolute; width:100%; bottom: 0; " max="1000" value="0"  step="10" class="styled-slider slider-progress" id="customRange3" >
                         </div>
-                        <input type="range" min="0" style="position: absolute; width:100%; bottom: 0; " max="1000" value="0"  step="10" class="styled-slider slider-progress" id="customRange3" >
                     </div>
                 </div>
             </div>
         </div>
     </form>
-    <div >
-        <div style="display: flex; justify-content: center;">
-            <h2 class="header_line" style="display: flex; justify-content: center; padding: 40px 20px 0 0">Расчет стоимости</h2>
-        </div>
+    <div style="height: 540px">
+
+            <h2 class="header_line" style="margin-bottom: 80px">Расчет стоимости</h2>
+
         <div id="textAlert"></div>
         <div id="textResult" style=" min-width: 200px;">
             <div style="min-width: 200px" id="listCostsAll">
                 <h4 class="header_line" style="font-size: 24px; text-align: center; margin-left: 30px;">Китай - Москва</h4>
                 <ul style="color: black; font-size: 22px;">
-                    <li><span>Цена в USDT:</span> <span style="color: red;" id="costUSDT">0</span></li>
-                    <hr>
-                    <li><span>Цена в юанях:</span> <span style="color: red;" id="costYAN">0</span></li>
+                    <li><span>Цена:</span>
+                        <div style="display: flex; flex-direction: row;">
+                            <span style="color: red;" id="costUSDT">0</span><span style="padding-left: 5px;">$</span>
+                        </div>
+                        <div style="display: flex; flex-direction: row;">
+                            <span style="color: red;" id="costYAN">0</span><span style="padding-left: 5px;">¥</span>
+                        </div>
+                        </li>
                     <hr>
                 </ul>
                 <h4 class="header_line" style="font-size: 24px; text-align: center; margin-left: 30px; margin-top: 0;">По России</h4>
                 <ul style="color: black; font-size: 22px;">
-                    <li><span >Цена в рублях:</span><span style="color: red;" id="costRUB">0</span></li>
+                    <li><span >Цена: </span>
+                        <div style="display: flex; flex-direction: row;">
+                            <span style="color: red;" id="costRUB">0</span><span style="padding-left: 5px;">₽</span>
+                        </div>
+
+
+
+                    </li>
                     <hr>
                 </ul>
                 <br>
