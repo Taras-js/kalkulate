@@ -7185,11 +7185,11 @@ document.querySelector("#datalistPlace").onchange = (event) => {
     }
 };
 
+
 document.querySelector("#rangeDT").oninput = (event) => {
     const range = document.querySelector("#rangeDT");
     document.querySelector("#data_dt").innerHTML = range.value;
 }
-
 document.querySelector("#weightContainer").oninput = (event) => {
     const range = document.querySelector("#weightContainer")
     document.querySelector("#data_weight").innerHTML = range.value;
@@ -7200,6 +7200,7 @@ document.querySelector("#weightContainer").oninput = (event) => {
     console.log("Данные:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
     let place = document.querySelector("#datalistPlace");
     let state = document.querySelector("#statelist");
+    console.log("place.value, state.value:", place.value, state.value)
     purchaseFromWeight.forEach(p => {
         if (rangeWeight.value >= p.weightFrom && rangeWeight.value <= p.distanceBefore) {
             if (place.value === "Nanjing") {
@@ -7460,15 +7461,11 @@ document.querySelector("#volumeContainer").oninput = (event) => {
     })
     const rub = document.querySelector("#costRUB")
     if(rub && rangeWeight.value > 0 && rangeVolume.value > 0)rub.innerText = `${priceRub || 0}`;
-
-
 }
-
 
 document.querySelector("#customRange3").oninput = (event) => {
     const range = document.querySelector("#customRange3")
     document.querySelector("#data_remoteness").innerHTML = range.value;
-
     let priceRub = '0'
     console.log("Россия:",rangeRussia.value, rangeWeight.value, rangeVolume.value)
     distance.forEach(p => {

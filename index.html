@@ -172,6 +172,7 @@ https://toughengineer.github.io/demo/slider-styler*/
 
         input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
             z-index: 100;
+            cursor: pointer;
             background: linear-gradient(red, orangered) 0/var(--sx) 100% no-repeat, #efefef;
         }
 
@@ -606,9 +607,7 @@ https://toughengineer.github.io/demo/slider-styler*/
         </div>
     </form>
     <div style="height: 540px">
-
             <h2 class="header_line" style="margin-bottom: 80px">Расчет стоимости</h2>
-
         <div id="textAlert"></div>
         <div id="textResult" style=" min-width: 200px;">
             <div style="min-width: 200px" id="listCostsAll">
@@ -630,25 +629,17 @@ https://toughengineer.github.io/demo/slider-styler*/
                         <div style="display: flex; flex-direction: row;">
                             <span style="color: red;" id="costRUB">0</span><span style="padding-left: 5px;">₽</span>
                         </div>
-
-
-
                     </li>
                     <hr>
                 </ul>
                 <br>
             </div>
         </div>
-
-
         <div class="col-auto" style="padding-top: 0px; display: flex; align-items: center; justify-content: center">
             <button  type="button" class="btn btn-danger auto" data-bs-toggle="modal" data-bs-target="#exampleModal"
                     >Оставить заявку на звонок
             </button>
         </div>
-
-
-
     </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
